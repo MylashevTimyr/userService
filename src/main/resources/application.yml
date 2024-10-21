@@ -1,0 +1,27 @@
+server:
+  address: 0.0.0.0
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: application/javascript, text/css, text/javascript
+  servlet:
+    session:
+      cookie:
+        http-only: true
+
+---
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: root
+    driverClassName: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: false
